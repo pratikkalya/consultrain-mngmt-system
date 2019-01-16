@@ -56,7 +56,7 @@ class ProjectManagementController extends Controller
 
     public function store(Request $request)
     {
-       // dd($request);
+       dd($request);
         $rules = [
             'customer_id' => 'required',
             'iso_product_id' => 'required',
@@ -215,13 +215,13 @@ class ProjectManagementController extends Controller
 
         $projectmanagement = ProjectManagement::findOrFail($id);
        // dd($projectmanagement);
-        $documentation = Documentation::findOrFail($id);
-        $implementation = Implementation::findOrFail($id);
-        $audit = Audit::findOrFail($id);
-        $assessment = Assessment::findOrFail($id);
-        $payment =Payment::findOrFail($id);
+       $documentation = $projectmanagement->documentation;
+       $implementation = $projectmanagement->implementation;
+       $audit = $projectmanagement->audit;
+       $assessment = $projectmanagement->assessment;
+       $payment = $projectmanagement->payment;
        // dd($audit);
-        return view('projectmanagement.edit', compact('projectmanagement','documentation','implementation','audit','assessment','payment'));
+        return view('projectmanagement.show', compact('projectmanagement','documentation','implementation','audit','assessment','payment'));
        
     }
 
@@ -235,19 +235,34 @@ class ProjectManagementController extends Controller
     
     public function update(Request $request , $id){
      
+        // dd($request);
         $projectmanagement= ProjectManagement::findOrFail($id);
+        // dd($projectmanagement);
         $rules = [
             'customer_id' => 'required',
-            'iso_product_id' => 'required',
-            'agency_id' => 'required',
             'order_no' => 'required',
             'order_amount' => 'required',
             'order_date' => 'required',
         ];
 
-        $this->validate($request, $rule);
-        $projectmanagement->update($request->all());
-       
+        $this->validate($request, $rules);
+        // dd($request);
+        $data = $request->all();
+        $projectmanagement->update($data);
+        // dd($projectmanagement);
+        $documentation = $projectmanagement->documentation;
+        $documentation->update($data);
+        $implementation = $projectmanagement->implementation;
+        $implementation->update($data);
+        $audit = $projectmanagement->audit;
+        $audit->update($data);
+        $assessment = $projectmanagement->assessment;
+        $assessment->update($data);
+        $payment = $projectmanagement->payment;
+        $payment->update($data);
+        
+        return redirect()->route('projectmanagement.show',['id'=> $projectmanagement->id]);
+
     }
 
    /**
@@ -272,7 +287,7 @@ class ProjectManagementController extends Controller
 
         $projectmanagements = ProjectManagement::where('amc', 'yes')->get();
        // dd($projectmanagements);
-       return view('amc.index' , compact('projectmanagements')) ->with('i', (request()->input('page', 1) - 1) * 5);;
+       return view('amc.projectindex' , compact('projectmanagements')) ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
 
 }

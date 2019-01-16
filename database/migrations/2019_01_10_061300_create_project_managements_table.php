@@ -26,9 +26,9 @@ class CreateProjectManagementsTable extends Migration
             $table->date('order_date');
             $table->string('reference')->nullable();
             $table->string('project_lead');
-            $table->date('start_plnd_dt');
-            $table->date('start_actual_dt');
-            $table->date('gap_assessment');
+            $table->date('start_plnd_dt')->nullable();;
+            $table->date('start_actual_dt')->nullable();;
+            $table->date('gap_assessment')->nullable();;
             $table->string('amc')->default('no');
             $table->timestamps();
             $table->softDeletes();

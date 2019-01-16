@@ -25,10 +25,14 @@ Route::resource('audit', 'AuditController');
 Route::resource('assessment', 'AssessmentController');
 Route::resource('payment', 'PaymentController');
 //Route::resource('amc', 'AmcController');
-Route::get('projectmanagement/{id}/amc/show', 'ProjectManagementAmcController@show')->name('projectmanagementamc.show');
+
 Route::get('amcs/complete', 'ProjectManagementController@completeAmc')->name('amcs.complete');
 Route::get('projectmanagement/{id}/amc/create', 'ProjectManagementAmcController@create')->name('projectmanagementamc.create');
 Route::post('projectmanagement/{id}/amc/', 'ProjectManagementAmcController@store')->name('projectmanagementamc.store');
+Route::get('projectmanagement/amc/{id}/show', 'ProjectManagementAmcController@show')->name('projectmanagementamc.show');
+Route::get('projectmanagement/amc/{id}/edit', 'ProjectManagementAmcController@edit')->name('projectmanagementamc.edit');
+Route::put('projectmanagement/amc/{id}/update', 'ProjectManagementAmcController@update')->name('projectmanagementamc.update');
+Route::get('projectmanagement/amc/index', 'ProjectManagementAmcController@index')->name('projectmanagementamc.index');
 // Route::resource('certifications', 'CertificationBodyController');
 //Route::resource('auditinfo', 'AuditInfoController');
 // Route::resource('auditmanagement', 'AuditManagementController');

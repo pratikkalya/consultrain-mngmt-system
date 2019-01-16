@@ -15,18 +15,16 @@
             <th>Order Number</th>
             <th>Customer Name</th>
             <th>Iso Service</th>
-            <th>AMC Purchase Order</th>
-            <th  width="80px">Details</th>
+            <th width="80px">AMC</th>
         </tr>
-        @foreach( $amcs as $amc)
+        @foreach( $projectmanagements as $projectmanagement)
         <tr>
            <td>{{ ++$i}}</td>
-           <td>{{ $amc->projectManagement->order_no}}</td>
-           <td>{{ $amc->projectManagement->customer->cust_name}}</td>
-           <td>{{ $amc->projectManagement->product->name}}</td>
-           <td>{{$amc->purchase_ordr}}</td>
+           <td>{{ $projectmanagement->order_no}}</td>
+           <td>{{ $projectmanagement->customer->cust_name}}</td>
+           <td>{{ $projectmanagement->product->name}}</td>
            <td>
-                <a class="btn btn-info" href="{{route('projectmanagementamc.show', ['id'=> $amc->id])}}">Details</a>
+                <a class="btn btn-info" href="{{route('projectmanagementamc.create', ['id'=> $projectmanagement->id])}}">Create</a>
             </td>
         </tr>
         @endforeach

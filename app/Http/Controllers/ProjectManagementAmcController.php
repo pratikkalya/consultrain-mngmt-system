@@ -9,9 +9,8 @@ use App\Amc;
 class ProjectManagementAmcController extends Controller
 {
     public function create($id){
-        $amc = Amc::all();
         $projectManagement = ProjectManagement::findOrFail($id);
-        return view('amc.create')->with(['projectmanagement'=> $projectManagement,'amc'=> $amc]);
+        return view('amc.create')->with(['projectmanagement'=> $projectManagement]);
     }
 
     public function store(Request $request, $id){
@@ -21,6 +20,7 @@ class ProjectManagementAmcController extends Controller
             'purchase_order'=> 'required',
             'project_cost'=> 'required',
             'period'=> 'required',
+            'start_plnd_dt'=> 'required',
         ];
         $this->validate($request, $rules);
 
@@ -44,17 +44,53 @@ class ProjectManagementAmcController extends Controller
 
 
         $amc->save();
-
+    return redirect()->route('projectmanagementamc.show', ['id'=> $amc->id]);
       //  dd($amc);
     }
 
   public function index()
-  
   {
     $amcs = Amc::all();
     //dd($projectmanagements);
      return view('amc.index', compact('amcs')) ->with('i', (request()->input('page', 1) - 1) * 5);
-
-
   } 
+
+  public function show($id)
+  {
+    $amc = Amc::findOrFail($id);
+    $project = $amc->projectManagement;
+    // dd($project);
+    $customer = $project->customer;
+    $product = $project->product;
+    //dd($product);
+    return view('amc.show')->with(['amc'=> $amc, 'project'=>$project, 'customer'=> $customer, 'product'=>$product]);
+  }
+  
+  public function edit($id)
+  {
+    $amc = Amc::findOrFail($id);
+    $project = $amc->projectManagement;
+    // dd($project);
+    $customer = $project->customer;
+    $product = $project->product;
+    //dd($product);
+    return view('amc.edit')->with(['amc'=> $amc, 'projectmanagement'=>$project, 'customer'=> $customer, 'product'=>$product]);
+  }
+
+  public function update(Request $request, $id)
+  {
+    $rules = [
+      'purchase_ordr'=> 'required',
+      'project_cost'=> 'required',
+      'period'=> 'required',
+      'start_plnd_dt'=>'required',
+  ];
+  $this->validate($request, $rules);
+    // dd($request);
+    $data = $request ->all();
+    // dd($amc);
+    $amc = Amc::find($id);
+    $amc->update($data);
+    return redirect()->route('projectmanagementamc.show', ['id'=>$amc->id]);
+  }
 }

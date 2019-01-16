@@ -35,18 +35,9 @@
            <td>{{ $projectmanagement->product->name}}</td>
            <td>{{ $projectmanagement->agency->agency_name }}</td>
            <td>
-                <form action=" " method="POST">
-   
+                  
                      <a class="btn btn-info" href="{{ route('projectmanagement.show',['id'=> $projectmanagement->id]) }}">Show</a>
 
-
-
-                        <!-- <a class="btn btn-primary" href="{{ route('projectmanagement.edit',$projectmanagement->id) }}">Edit</a> -->
-                    @csrf
-                    @method('DELETE')
-      
-                    <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                </form>
             </td>
         </tr>
         @endforeach
