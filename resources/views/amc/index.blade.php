@@ -31,5 +31,5 @@
         </tr>
         @endforeach
     </table>
-
+    {!! $amcs->links() !!}
     @endsection

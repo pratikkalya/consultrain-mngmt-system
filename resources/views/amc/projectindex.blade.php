@@ -29,5 +29,5 @@
         </tr>
         @endforeach
     </table>
-
+    {!! $projectmanagements->links() !!}
     @endsection

@@ -9,7 +9,7 @@ use App\Implementation;
 use App\Audit;
 use App\Assessment;
 use App\Payment;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\Agency;
 use App\Customer;
@@ -28,7 +28,7 @@ class ProjectManagementController extends Controller
     public function index()
     {
 
-        $projectmanagements = ProjectManagement::all();
+        $projectmanagements = ProjectManagement::latest()->paginate(5);
        //dd($projectmanagements);
         return view('projectmanagement.index', compact('projectmanagements')) ->with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -285,9 +285,11 @@ class ProjectManagementController extends Controller
 
     public function completeAmc(){
 
-        $projectmanagements = ProjectManagement::where('amc', 'yes')->get();
+        $projectmanagements = ProjectManagement::where('amc', 'yes')->latest()->paginate(5);
        // dd($projectmanagements);
        return view('amc.projectindex' , compact('projectmanagements')) ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
+
+    
 
 }

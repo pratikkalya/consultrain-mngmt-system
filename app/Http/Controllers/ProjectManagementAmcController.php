@@ -50,7 +50,7 @@ class ProjectManagementAmcController extends Controller
 
   public function index()
   {
-    $amcs = Amc::all();
+    $amcs = Amc::latest()->paginate(5);
     //dd($projectmanagements);
      return view('amc.index', compact('amcs')) ->with('i', (request()->input('page', 1) - 1) * 5);
   } 

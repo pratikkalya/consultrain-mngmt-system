@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("img/.ico") }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("img/favicon.ico") }}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
@@ -67,6 +67,7 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{ asset("js/vendor/modernizr-2.8.3.min.js") }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -1018,7 +1019,7 @@
         gtag('config', 'UA-23581568-13');
 
     </script>
-    @yield('scripts')
+    @stack('scripts')
 </body>
 
 

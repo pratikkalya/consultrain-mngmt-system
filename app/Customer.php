@@ -20,8 +20,8 @@ class Customer extends Model
     ];
 
 
-    public function projectManagement()
+    public function projectManagements()
     {
-        return $this-hasMany(ProjectManagement::class, 'customer_id');
+        return $this->hasMany(ProjectManagement::class, 'customer_id');
     }
 }
