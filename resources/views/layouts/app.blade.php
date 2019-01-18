@@ -80,13 +80,13 @@
             <div class="sidebar-header">
                 <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>
 
-                @guest
+                <!-- @guest
                 @if(Route::currentRouteName() == "login")
                 Login
                 @endif
                 @else
                 {{Auth::user()->name}}
-                @endguest
+                @endguest -->
                 <strong><img src="{{ asset("img/logo/logosn.html") }}" alt="" /></strong>
             </div>
             <!-- End Logo -->
@@ -103,14 +103,6 @@
                                         alt="" style="padding: 8px;"><span class="mini-click-non">List of all customers</span></a></li>
                             <li><a title="Add Customer" href="{{ route('customer.create') }}"><img src="{{asset('img/sidebar/add-user.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Add New Customer</span></a></li>
-                            <!--<li><a title="Dashboard v.3" href="index-2.html"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.3</span></a></li>
-                            <li><a title="Product List" href="product-list.html"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product List</span></a></li>
-                            <li><a title="Product Edit" href="product-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Edit</span></a></li>
-                            <li><a title="Product Detail" href="product-detail.html"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Detail</span></a></li>
-                            <li><a title="Product Cart" href="product-cart.html"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Cart</span></a></li>
-                            <li><a title="Product Payment" href="product-payment.html"><i class="fa fa-location-arrow sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Payment</span></a></li>
-                            <li><a title="Analytics" href="analytics.html"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Analytics</span></a></li>
-                            <li><a title="Widgets" href="widgets.html"><i class="fa fa-magnet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Widgets</span></a></li> -->
                         </ul>
                     </li>
 

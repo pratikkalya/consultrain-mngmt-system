@@ -18,3 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('customers/search', 'Api\CustomerController@search');
+Route::get('amc/search', 'Api\AmcSearchController@search');
+Route::get('amc/order/search', 'Api\AmcOrderSearchController@search');
+
+
