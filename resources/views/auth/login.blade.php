@@ -1,7 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-
 <!-- Mirrored from colorlib.com/polygon/jeweler/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 09:24:18 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
@@ -9,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Login | | CMS </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -69,24 +67,20 @@
     <script src="{{ asset("css/bootstrap.min.css") }}js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
-    <!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-
-    <div class="color-line"></div>
-    <br><br><br>
+<body style="background:#80d4ff">
+    <!-- <div class="color-line"></div> -->
+    <br>
     <div class="text-center">
         <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>
     </div>
-    <br><br><br>
+    <br><br><br><br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
             <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="text-center m-b-md custom-login">
                     <h3>LOGIN</h3>
-                    {{--<p>This is the best app ever!</p>--}}
+                    <!-- {{--<p>This is the best app ever!</p>--}} -->
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
@@ -96,7 +90,7 @@
                                 <label class="control-label" for="username">Username</label>
                                 <input type="text" placeholder="example@gmail.com" title="Please enter you username"
                                     required name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}">
-                                <!-- <span class="help-block small">Your unique username to app</span> -->
+                                <span class="help-block small">Your unique username to app</span>
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('email') }}</strong>
@@ -125,7 +119,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                <p>Copyright &copy; 2018 <a href="#"></a> All rights reserved.</p>
+                <p>Copyright &copy; <?php echo date("Y") ?><a href="#"></a> All rights reserved.</p>
             </div>
         </div>
     </div>
@@ -189,8 +183,5 @@
 
     </script>
 </body>
-
-
 <!-- Mirrored from colorlib.com/polygon/jeweler/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 09:24:18 GMT -->
-
 </html>
