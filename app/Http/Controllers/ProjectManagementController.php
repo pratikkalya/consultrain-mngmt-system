@@ -56,7 +56,7 @@ class ProjectManagementController extends Controller
 
     public function store(Request $request)
     {
-       dd($request);
+    //    dd($request);
         $rules = [
             'customer_id' => 'required',
             'iso_product_id' => 'required',

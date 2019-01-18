@@ -10,6 +10,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const USER_ADMIN = 'admin';
+    const USER_EMPLOYEE = 'employee';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,4 +30,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Tells if the user is a USER_ADMIN type user
+     *
+     * @return boolean
+     */
+    public function isUserAdmin()
+    {
+        return $this->user_type == User::USER_ADMIN;
+    }
+
+    public function isUserEmployee()
+    {
+        return $this->user_type == User::USER_EMPLOYEE;
+    }
 }

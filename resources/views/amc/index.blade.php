@@ -9,9 +9,9 @@
     <p>{{ $message }}</p>
 </div>
 @endif
-<div class="form-group">
+<!-- <div class="form-group">
     <input type="text" class="form-control" id="search" name="search" placeholder="Search By Name..">
-</div>
+</div> -->
 <table class="table table-bordered" id="table">
     <thead>
         <tr>
