@@ -140,7 +140,8 @@ body {}
     margin-bottom: 5px;
 }
 #sidebar.active .sidebar-header .main-logo{
-	display:none;
+    display:none;
+    
 }
 #sidebar.active
 #sidebar.active .sidebar-header h3{
