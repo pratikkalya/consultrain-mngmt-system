@@ -28,46 +28,44 @@
                     <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
                 </div>
             </div>
-       </div>
-       <br><br><br>
-       <div class="panel-group" id="accordion">
-         <!-- accordion 1 -->
-          <div class="panel panel-primary">
-             <div class="panel-heading">
-                  <!-- panel-heading -->
-                  <h4 class="panel-title">
-                  <!-- title 1 -->
-                       <a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">
-                         <!-- <i class="more-less glyphicon glyphicon-plus"></i> -->
-                         <b> PROJECT PLANNING</b>
-                       </a>
-                  </h4>
-              </div>
-              <!-- panel body -->
-              <div id="accordionOne" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                     <div class="col-sm-12">
-                         <div class="row">
-                              <div class="col-sm-4">
-                                 <label for="project_lead">Project Leader:</label>
-                                 <input type="text" class="form-control" id="project_lead" name="project_lead"
-                                  value="{{ $projectmanagement->project_lead}}">
-                               </div>
+        </div>
+        <br><br><br>
+        <div class="panel-group" id="accordion">
+            <!-- accordion 1 -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <!-- panel-heading -->
+                    <h4 class="panel-title">
+                        <!-- title 1 -->
+                        <a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">
+                            <!-- <i class="more-less glyphicon glyphicon-plus"></i> -->
+                            <b> PROJECT PLANNING</b>
+                        </a>
+                    </h4>
+                </div>
+                <!-- panel body -->
+                <div id="accordionOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="project_lead">Project Leader:</label>
+                                    <input type="text" class="form-control" id="project_lead" name="project_lead" value="{{ $projectmanagement->project_lead}}">
+                                </div>
 
-                               <div class="col-sm-4">
-                                  <label for="reference">Reference:</label>
-                                  <input type="text" class="form-control" id="reference" name="reference" value="{{ $projectmanagement->reference}}">
-                               </div>
-                               <div class="col-sm-4">
-                                  <legend>AMC</legend>
-                                  <p>
-                                     <label>Yes</label>
-                                     <input type="radio" name="amc" id="yes" value="yes" />
-                                     <label for="sizeSmall">No</label>
-                                     <input type="radio" name="amc" id="no" value="no" checked="checked" />
-                                  </p>
-                              </div>
-                          </div>
+                                <div class="col-sm-4">
+                                    <label for="reference">Reference:</label>
+                                    <input type="text" class="form-control" id="reference" name="reference" value="{{ $projectmanagement->reference}}">
+                                </div>
+                                <div class="col-sm-4">
+                                <label for="amc">AMC:</label>
+                                    <div class="radio">
+                                    
+                                        <label><input type="radio" name="amc" value="yes" @if($projectmanagement->amc == 'yes') Checked @endif>Yes</label>
+                                        <label><input type="radio" name="amc" value="no" @if($projectmanagement->amc == 'no') Checked @endif>No</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <label for="tender_no">Tender No:</label>
@@ -545,16 +543,18 @@
 
 @push('scripts')
 <script>
-         jQuery(function ($) {
-    var $active = $('#accordion .panel-collapse.in').prev().addClass('active');
-    $active.find('a').prepend('<i class="glyphicon glyphicon-minus"></i>');
-    $('#accordion .panel-heading').not($active).find('a').prepend('<i class="glyphicon glyphicon-plus"></i>');
-    $('#accordion').on('show.bs.collapse', function (e) {
-    $('#accordion .panel-heading.active').removeClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
-    $(e.target).prev().addClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
-   })
-});
-    
+    jQuery(function ($) {
+        var $active = $('#accordion .panel-collapse.in').prev().addClass('active');
+        $active.find('a').prepend('<i class="glyphicon glyphicon-minus"></i>');
+        $('#accordion .panel-heading').not($active).find('a').prepend(
+            '<i class="glyphicon glyphicon-plus"></i>');
+        $('#accordion').on('show.bs.collapse', function (e) {
+            $('#accordion .panel-heading.active').removeClass('active').find('.glyphicon').toggleClass(
+                'glyphicon-plus glyphicon-minus');
+            $(e.target).prev().addClass('active').find('.glyphicon').toggleClass(
+                'glyphicon-plus glyphicon-minus');
+        })
+    });
 
 </script>
 

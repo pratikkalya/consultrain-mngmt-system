@@ -71,50 +71,76 @@
 </head>
 
 <body>
+    <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <a href="/dashboard"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>
+
+                <!-- @guest
+                @if(Route::currentRouteName() == "login")
+                Login
+                @endif
+                @else
+                {{Auth::user()->name}}
+                @endguest -->
+                <strong><img src="{{ asset("img/logo/logosn.html") }}" alt="" /></strong>
             </div>
+            <!-- End Logo -->
+            <!-- Sidebar Area
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">-->
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
-                    <li>
+                    <li class="">
                         <a class="has-arrow" href="#">
-                            <span class="mini-click-non">Customer</span>
+                            <img src="{{asset('img/sidebar/home1.png')}}" alt="Home" style="padding: 6px;"> <span class="mini-click-non">Customer</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Customer List" href="{{ route('customer.index') }}"><span class="mini-click-non">List of all customers</span></a></li>
-                            <li><a title="Add Customer" href="{{ route('customer.create') }}"><span class="mini-click-non">Add New Customer</span></a></li>
+                            <li><a title="Customer List" href="{{ route('customer.index') }}"><img src="{{asset('img/sidebar/users.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">List of all customers</span></a></li>
+                            <li><a title="Add Customer" href="{{ route('customer.create') }}"><img src="{{asset('img/sidebar/add-user.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Add New Customer</span></a></li>
                         </ul>
                     </li>
-
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><span class="mini-click-non">ISO Services</span></a>
+                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home2.png')}}"
+                                alt="" style="padding: 6px;"><span class="mini-click-non">ISO Services</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="ISO Service List" href="{{ route('products.index') }}"><span class="mini-click-non">Show All Services</span></a></li>
-                            <li><a title="Add New Service" href="{{ route('products.create') }}"><span class="mini-click-non">Add New Services</span></a></li>
+                            <li><a title="ISO Service List" href="{{ route('products.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Show All Services</span></a></li>
+                            <li><a title="Add New Service" href="{{ route('products.create') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Add New Services</span></a></li>
                         </ul>
                     </li>
 
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><span class="mini-click-non">Project Planning</span></a>
+                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
+                                alt="" style="padding: 6px;"><span class="mini-click-non">Project Planning</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <!-- <li><a title="ISO Service List" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Show All Projects</span></a></li> -->
-                            <li><a title="Add New Project" href="{{ route('projectmanagement.create') }}"><span class="mini-click-non">Add New Project</span></a></li>
-                            <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><span class="mini-click-non">Project Info</span></a></li>
+                            <li><a title="Add New Project" href="{{ route('projectmanagement.create') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Add New Project</span></a></li>
+                            <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Project Info</span></a></li>
                         </ul>
                     </li>
                     <!-- <li><a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li> -->
 
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><span class="mini-click-non">AMC Orders</span></a>
+                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
+                                alt="" style="padding: 6px;"><span class="mini-click-non">AMC Orders</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <!-- <li><a title="ISO Service List" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Show All Projects</span></a></li> -->
-                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><span class="mini-click-non">Show AMC Lists</span></a></li>
+                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Lists</span></a></li>
 
-                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><span class="mini-click-non">Show AMC Order Lists</span></a></li>
+                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Order Lists</span></a></li>
 
                             <!-- <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Project Info</span></a></li> -->
                         </ul>
@@ -150,7 +176,9 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                        <div class="header-top-menu tabl-d-n">
 
+                                        </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
@@ -312,7 +340,7 @@
                                                         </form>
                                                     </ul>
                                                 </li>
-                                               
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -322,7 +350,7 @@
                     </div>
                 </div>
             </div>
-
+           
             <div class="breadcome-area" style="background: #aaaaaa;">
                 <div class="container-fluid">
                     <div class="row">
@@ -439,5 +467,8 @@
     </script>
     @stack('scripts')
 </body>
+
+
+<!-- Mirrored from colorlib.com/polygon/jeweler/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 09:23:27 GMT -->
 
 </html>
