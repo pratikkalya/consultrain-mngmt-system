@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
-class EmployeeMiddleware
+class AdminEmployeeMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class EmployeeMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::user()->isUserEmployee()) {
-            return redirect()->route('dashboard.index');
+        if(Auth::user()->isUserAdmin() || Auth::user()->isUserEmployee()) {
+            return $next($request);
         }
-        return $next($request);
+      return redirect()->route('dashboard.index');          
     }
 }

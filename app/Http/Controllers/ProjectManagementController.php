@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\Agency;
 use App\Customer;
+use Auth;
+use App\User;
 
 
 class ProjectManagementController extends Controller
@@ -27,9 +29,12 @@ class ProjectManagementController extends Controller
 
     public function index()
     {
-
+        if(Auth::user()->user_type == 'admin'){
         $projectmanagements = ProjectManagement::latest()->paginate(5);
-       //dd($projectmanagements);
+        }
+        elseif(Auth::user()->user_type == 'employee'){
+        $projectmanagements = ProjectManagement::where('user_id', Auth::user()->id)->latest()->paginate(5);;   
+        }
         return view('projectmanagement.index', compact('projectmanagements')) ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
@@ -44,7 +49,8 @@ class ProjectManagementController extends Controller
         $customers = Customer::all();
         $products =DB::table('products')->select('id','name')->get();
         $agencies =DB::table('agencies')->select('id','agency_name')->get();
-        return view('projectmanagement.create', compact('customers','products','agencies'));
+        $leaders = User::where('user_type', 'employee')->get();
+        return view('projectmanagement.create', compact('customers','products','agencies', 'leaders'));
     }
 
   /**
@@ -61,6 +67,7 @@ class ProjectManagementController extends Controller
             'customer_id' => 'required',
             'iso_product_id' => 'required',
             'agency_id' => 'required',
+            'user_id' => 'required',
             'order_no' => 'required',
             'order_amount' => 'required',
             'order_date' => 'required',

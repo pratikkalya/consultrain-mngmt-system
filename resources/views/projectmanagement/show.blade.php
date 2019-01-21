@@ -1,30 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</head>
-
-<body>
     <form action="{{ route('projectmanagement.update', ['id'=> $projectmanagement->id]) }}" method="post">
         {{csrf_field()}}
         <div class="col-sm-12">
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('projectmanagement.index') }}"> Back</a>
-            </div>
             <div class="row">
                 <input type="hidden" name="_method" value="put">
                 <div class="col-sm-4">
                     <label class="bmd-label-floating">Customer Name: {{$projectmanagement->customer->cust_name}}</label>
+                    <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
+                </div>
+                <div class="col-sm-4">
+                    <label class="bmd-label-floating">Service Name: {{$projectmanagement->product->name}}</label>
+                    <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
+                </div>
+                <div class="col-sm-4">
+                    <label class="bmd-label-floating">Agency Name: {{$projectmanagement->agency->agency_name}}</label>
                     <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
                 </div>
             </div>
@@ -49,8 +40,10 @@
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <label for="project_lead">Project Leader:</label>
-                                    <input type="text" class="form-control" id="project_lead" name="project_lead" value="{{ $projectmanagement->project_lead}}">
+                                <label for="project_lead">Project Leader:</label>
+                                <select name="user_id" class="form-control">
+                                    <option value="{{ $projectmanagement->user->id }}">{{ $projectmanagement->user->name }}</option>                                   
+                                </select>
                                 </div>
 
                                 <div class="col-sm-4">
@@ -87,12 +80,12 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <label for="order_no">Order No:</label>
-                                    <input type="text" class="form-control" id="order_no" name="order_no" value="{{ $projectmanagement->order_no}}">
+                                    <input type="text" class="form-control" id="order_no" name="order_no" value="{{ $projectmanagement->order_no}}" readonly>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <label for="order_date">Order Date:</label>
-                                    <input type="date" class="form-control" id="order_date" name="order_date" value="{{ $projectmanagement->order_date}}">
+                                    <input type="date" class="form-control" id="order_date" name="order_date" value="{{ $projectmanagement->order_date}}" readonly>
                                 </div>
 
                                 <div class="col-sm-4">
@@ -536,9 +529,6 @@
             </div>
         </div>
     </form>
-</body>
-
-</html>
 @endsection
 
 @push('scripts')

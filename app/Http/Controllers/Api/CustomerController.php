@@ -11,7 +11,7 @@ class CustomerController extends Controller
 {
     public function search()
     {
-            $projects = ProjectManagement::with('customer')->with('product')->with('agency')->get();
+            $projects = ProjectManagement::with('customer')->with('product')->with('agency')->with('user')->get();
             // dd($projects);
             return response()->json(['data'=> $projects, 'code'=> 200]);
     }

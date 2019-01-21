@@ -15,10 +15,12 @@
     <p>{{ $message }}</p>
 </div>
 @endif
-
+<br><br>
+@if(Auth::user()->user_type == 'admin')
 <div class="form-group">
     <input type="text" class="form-control" id="search" name="search" placeholder="Search By Name..">
 </div>
+@endif
 <table class="table table-bordered" id="table">
     <thead>
         <tr>
@@ -37,7 +39,7 @@
             <td>{{ ++$i}}</td>
             <td>{{ $projectmanagement->order_no}}</td>
             <td>{{ $projectmanagement->customer->cust_name}}</td>
-            <td>{{ $projectmanagement->project_lead}}</td>
+            <td>{{ $projectmanagement->user->name}}</td>
             <td>{{ $projectmanagement->product->name}}</td>
             <td>{{ $projectmanagement->agency->agency_name }}</td>
             <td>
@@ -71,7 +73,7 @@
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "http://127.0.0.1:8000/api/customers/search",
+            'url': "{{env('ROOT_URL')}}/api/customers/search",
             'dataType': 'json',
             'success': function (data) {
                 // console.log(data);
@@ -84,7 +86,7 @@
                     search_details.id = value.id;
                     search_details.order_no = value.order_no.toLowerCase();
                     search_details.cust_name = value.customer.cust_name.toLowerCase();
-                    search_details.project_lead = value.project_lead.toLowerCase();
+                    search_details.project_lead = value.user.name.toLowerCase();
                     search_details.product_name = value.product.name.toLowerCase();
                     search_details.agency_name = value.agency.agency_name.toLowerCase();
                     content.push(search_details);
@@ -107,11 +109,11 @@
                     if (val.order_no.search(myExp) != -1 || val.project_lead.search(myExp) != -
                         1 || val.cust_name.search(myExp) != -1 || val.product_name.search(myExp) !=
                         -1 || val.agency_name.search(myExp) != -1) {
-                        // console.log(val);
+                        console.log(val);
                         content += '<tr><td>' + counter + '</td><td>' + val.order_no +
                             '</td><td>' + val.cust_name + '</td><td>' + val.project_lead +
                             '</td><td>' + val.product_name + '</td><td>' + val.agency_name +
-                            '</td><td><a class="btn btn-info" href="http://127.0.0.1:8000/projectmanagement/' +
+                            '</td><td><a class="btn btn-info" href="{{env('ROOT_URL')}}/projectmanagement/' +
                             val.id + '">Show</a></td></tr>'
                     }
                     counter++;

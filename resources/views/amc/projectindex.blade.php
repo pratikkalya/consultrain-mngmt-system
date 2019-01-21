@@ -55,7 +55,7 @@
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "http://127.0.0.1:8000/api/amc/search",
+            'url': "{{env('ROOT_URL')}}/api/amc/search",
             'dataType': 'json',
             'success': function (data) {
                 // console.log(data);
@@ -88,7 +88,7 @@
                     if (val.order_no.search(myExp) != -1 || val.cust_name.search(myExp) != -1 || val.product_name.search(myExp) != -1) {
                         // console.log(val);
                         content += '<tr><td>' + counter + '</td><td>' + val.order_no +
-                            '</td><td>' + val.cust_name + '</td><td>' + val.product_name + '</td><td><a class="btn btn-info" href="http://127.0.0.1:8000/projectmanagement/' +
+                            '</td><td>' + val.cust_name + '</td><td>' + val.product_name + '</td><td><a class="btn btn-info" href="{{env('ROOT_URL')}}/projectmanagement/' +
                             val.id + '/amc/create">Create</a></td></tr>'
                     }
                     counter++;

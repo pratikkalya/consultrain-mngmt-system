@@ -14,6 +14,7 @@ class ProjectManagement extends Model
         'customer_id',
         'iso_product_id',
         'agency_id',
+        'user_id',
         'tender_no',
         'tender_amount',
         'tender_date',
@@ -21,7 +22,6 @@ class ProjectManagement extends Model
         'order_amount',
         'order_date',
         'reference',
-        'project_lead',
         'start_plnd_dt',
         'start_actual_dt',
         'gap_assessment',
@@ -73,5 +73,10 @@ class ProjectManagement extends Model
     public function amc()
     {
         return $this->hasOne(Amc::class, 'order_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

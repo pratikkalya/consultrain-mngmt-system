@@ -48,19 +48,19 @@
 
                            <div class= "col-sm-4">
                               <label for="project_cost">Project Cost</label>
-                              <input type="text" class="form-control" id="project_cost" name="project_cost">
+                              <input type="text" class="form-control" id="project_cost" name="project_cost" required>
                            </div>
 
                             <div class= "col-sm-4">
                               <label for="period">Period</label>
-                              <input type="text" class="form-control" id="period" name="period">
+                              <input type="text" class="form-control" id="period" name="period" required>
                            </div>
                       </div>
 
                       <div class ="row">
                           <div class= "col-sm-4">
                              <label for="start_plnd_dt">Start Planned Date:</label>
-                             <input type="date" class="form-control" id="start_plnd_dt" name="start_plnd_dt">
+                             <input type="date" class="form-control" id="start_plnd_dt" name="start_plnd_dt" required>
                          </div>
 
                          <div class= "col-sm-4">

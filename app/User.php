@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->user_type == User::USER_EMPLOYEE;
     }
+
+    public function projectManagements()
+    {
+        return $this->hasMany(ProjectManagement::class, 'user_id');
+    }
 }

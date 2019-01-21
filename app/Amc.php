@@ -29,6 +29,6 @@ class Amc extends Model
 
     public function projectManagement()
     {
-        return $this->belongsTo(projectManagement::class ,'order_id');
+        return $this->belongsTo(ProjectManagement::class ,'order_id');
     }
 }
