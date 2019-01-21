@@ -184,9 +184,9 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                                                    <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
                                                         class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro"
-                                                            aria-hidden="true"></i><span class="indicator-ms"></span></a>
+                                                            aria-hidden="true"></i><span class="indicator-ms"></span></a> -->
                                                     <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
                                                         <div class="message-single-top">
                                                             <h1>Message</h1>
@@ -246,9 +246,9 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button"
+                                                <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button"
                                                         aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o"
-                                                            aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                            aria-hidden="true"></i><span class="indicator-nt"></span></a> -->
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
                                                             <h1>Notifications</h1>
@@ -321,7 +321,7 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="fa fa-home author-log-ic"></span>Register</a>
+                                                        <!-- <li><a href="#"><span class="fa fa-home author-log-ic"></span>Register</a>
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-user author-log-ic"></span>My
                                                                 Profile</a>
@@ -330,7 +330,7 @@
                                                                 Lock</a>
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
                                                                     class="fa fa-power-off"></i> Logout</a></li>
@@ -340,7 +340,7 @@
                                                         </form>
                                                     </ul>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
@@ -350,7 +350,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <div class="breadcome-area" style="background: #aaaaaa;">
                 <div class="container-fluid">
                     <div class="row">
