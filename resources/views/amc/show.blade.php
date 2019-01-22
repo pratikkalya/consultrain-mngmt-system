@@ -1,33 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-<!-- <h2 style="padding: 2px;">AMC Details</h2>
-<br>
-<table class="table table-bordered">
-        <tr>
-            <th>Customer Name</th>
-            <th>ISO Service</th>
-            <th>Order No.</th>
-            <th>Purchased Order</th>
-            <th>Project Cost</th>
-            <th>Period</th>
-            <th>Planned Date</th>
-        <th>Action</th> 
-        <tr>
-           <td>{{$customer->cust_name}}</td>
-           <td>{{$product->name}}</td>
-           <td>{{$project->order_no}}</td>
-           <td>{{$amc->purchase_ordr}}</td>
-           <td>{{$amc->project_cost}}</td>
-           <td>{{$amc->period}}</td>
-           <td>{{$amc->start_plnd_dt}}</td>
-         <td>
-                <a class="btn btn-primary" href="{{ route('customer.edit',$customer->id) }}">Edit</a>
-            </td> 
-        </tr>
-
-</table> -->
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -73,12 +46,12 @@
             <div class="row ">
                 @if($amc->start_plnd_dt)
                 <div class="col-sm-4">
-                    <b>Start Planned Date :</b> {{$amc->start_plnd_dt}}
+                    <b>Start Planned Date :</b> {{Carbon\Carbon::parse($amc->start_plnd_dt)->format('d-m-Y')}}
                 </div>
                 @endif
                 @if($amc->start_actl_dt)
                 <div class="col-sm-4">
-                    <b>Start Actual Date :</b> {{$amc->start_actl_dt}}
+                    <b>Start Actual Date :</b> {{Carbon\Carbon::parse($amc->start_actl_dt)->format('d-m-Y')}}
                 </div>
                 @endif
             </div>
@@ -87,7 +60,7 @@
             <div class="row">
                 @if($amc->visit1_dt)
                 <div class="col-sm-4">
-                    <b>Visit One :</b> {{$amc->visit1_dt}}
+                    <b>Visit One :</b> {{Carbon\Carbon::parse($amc->visit1_dt)->format('d-m-Y')}}
                 </div>
                 @endif
                 @if($amc->payment_1)
@@ -101,7 +74,7 @@
             <div class="row ">
                 @if($amc->visit2_dt)
                 <div class="col-sm-4">
-                    <b>Visit Two :</b> {{$amc->visit2_dt}}
+                    <b>Visit Two :</b> {{Carbon\Carbon::parse($amc->visit2_dt)->format('d-m-Y')}}
                 </div>
                 @endif
                 @if($amc->payment_2)
@@ -115,7 +88,7 @@
             <div class="row ">
                 @if($amc->visit3_dt)
                 <div class="col-sm-4">
-                    <b>Visit Three :</b> {{$amc->visit3_dt}}
+                    <b>Visit Three :</b> {{Carbon\Carbon::parse($amc->visit3_dt)->format('d-m-Y')}}
                 </div>
                 @endif
                 @if($amc->payment_3)
@@ -129,7 +102,7 @@
             <div class="row ">
                 @if($amc->visit4_dt)
                 <div class="col-sm-4">
-                    <b>Visit Four :</b> {{$amc->visit4_dt}}
+                    <b>Visit Four :</b> {{Carbon\Carbon::parse($amc->visit4_dt)->format('d-m-Y')}}
                 </div>
                 @endif
                 @if($amc->payment_4)

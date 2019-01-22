@@ -16,15 +16,15 @@
               {{csrf_field()}}
               <div class="form-group">
                  <label for="cust_name">Name</label>
-                 <input type="cust_name" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name">
+                 <input type="text" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name">
               </div>
               <div class="form-group">
                  <label for="cust_email">Email address</label>
-                 <input type="cust_email" class="form-control" id="cust_email" placeholder="Enter email" name="cust_email">
+                 <input type="email" class="form-control" id="cust_email" placeholder="Enter email" name="cust_email">
               </div>
               <div class="form-group">
                   <label for="cust_phone_number">Phone Number</label>
-                  <input type="cust_phone_number" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number">
+                  <input type="integer" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number">
               </div>
               <div class="form-group">
                 <label for="contact_person_name">Contact Person</label>
@@ -32,7 +32,7 @@
              </div>
              <div class="form-group">
                 <label for="contact_person_number">Contact Person Number</label>
-                <input type="text" class="form-control" id="contact_person_number" placeholder="Contact Person Number" name="contact_person_number">
+                <input type="integer" class="form-control" id="contact_person_number" placeholder="Contact Person Number" name="contact_person_number">
              </div>
              <div class="form-group">
                 <label for="street_name">Street Name</label>
@@ -55,7 +55,7 @@
               <div class="col-sm-6" style="padding: 0px;">
                  <div class="form-group">
                      <label for="pincode">Pincode</label>
-                     <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;" >
+                     <input type="integer" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;" >
                  </div>
               </div>
               

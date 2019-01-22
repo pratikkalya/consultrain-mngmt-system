@@ -2,8 +2,6 @@
 
 @section('content')
 
-    <!-- <div class="row">
-        <h1>You are logged in</h1>
-    </div> -->
+        <h1 class="text-center">Welcome to Consultrain Management</h1>
     
 @endsection

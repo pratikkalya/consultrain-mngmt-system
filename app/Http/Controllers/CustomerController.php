@@ -39,16 +39,14 @@ class CustomerController extends Controller
     {
         // dd($request);
         $rules = [
-            'cust_name' => 'required',
-            'cust_phone_number' => 'required',
-            'cust_email' => 'required',
-            'contact_person_name' => 'required',
-            'contact_person_number' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'street_name' => 'required',
-            'pincode' => 'required',
-            'country' =>'required',
+            'cust_name' => 'required|string',
+            'cust_phone_number' => 'required|integer',
+            'cust_email' => 'required|email',
+            'city' => 'required|string',
+            'state' => 'required|string',
+            'street_name' => 'required|string',
+            'pincode' => 'required|integer',
+            'country' =>'required|string',
         ];
 
         $this->validate($request, $rules);
