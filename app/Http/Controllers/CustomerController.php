@@ -41,7 +41,6 @@ class CustomerController extends Controller
         $rules = [
             'cust_name' => 'required|string',
             'cust_phone_number' => 'required',
-            'cust_email' => 'required|email',
             'city' => 'required|string',
             'state' => 'required|string',
             'street_name' => 'required|string',
