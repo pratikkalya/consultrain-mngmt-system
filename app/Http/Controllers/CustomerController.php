@@ -40,12 +40,12 @@ class CustomerController extends Controller
         // dd($request);
         $rules = [
             'cust_name' => 'required|string',
-            'cust_phone_number' => 'required|integer',
+            'cust_phone_number' => 'required',
             'cust_email' => 'required|email',
             'city' => 'required|string',
             'state' => 'required|string',
             'street_name' => 'required|string',
-            'pincode' => 'required|integer',
+            'pincode' => 'required',
             'country' =>'required|string',
         ];
 
