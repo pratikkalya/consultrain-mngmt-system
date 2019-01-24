@@ -30,7 +30,7 @@
             <td>{{ $product->name }}</td>
             <!-- <td>{{ $product->detail }}</td> -->
             <td>
-                <form action="{" method="POST">
+                <form action="" method="POST">
    
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
 
