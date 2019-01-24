@@ -162,8 +162,6 @@
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-<<<<<<< HEAD
-=======
                                                 <li class="nav-item dropdown">
                                                    
                                                 <div role="menu" class="notification-author dropdown-menu animated zoomIn">
@@ -176,7 +174,6 @@
                                                     </div>
                                                 </div>
                                                 </li>
->>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
                                                         class="nav-link dropdown-toggle">
@@ -186,10 +183,7 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-<<<<<<< HEAD
-=======
                                                       
->>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
                                                                     class="fa fa-power-off"></i> Logout</a></li>
@@ -214,8 +208,6 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 50px;min-height: calc(100vh - 62px);">
-<<<<<<< HEAD
-=======
                             <!--<div class="breadcome-list">-->
                             <!--    <div class="row">-->
                             <!--        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
@@ -225,7 +217,6 @@
 
                             <!--    </div>-->
                             <!--</div>-->
->>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                             @yield('content')
                         </div>
                     </div>
