@@ -163,16 +163,16 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item dropdown">
-                                                   
-                                                <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                    
-                                                    <ul class="notification-menu">
-                                                        
-                                                    </ul>
-                                                    <div class="notification-view">
-                                                        <a href="#">View All Notification</a>
+
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+
+                                                        <ul class="notification-menu">
+
+                                                        </ul>
+                                                        <div class="notification-view">
+                                                            <a href="#">View All Notification</a>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
@@ -183,7 +183,7 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                      
+
                                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
                                                                     class="fa fa-power-off"></i> Logout</a></li>

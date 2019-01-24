@@ -16,23 +16,25 @@
               {{csrf_field()}}
               <div class="form-group">
                  <label for="cust_name">Name</label>
-                 <input type="text" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name" required>
+                 <input type="text" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name" required autofocus pattern="[A-Za-z ]{1,100}">
               </div>
               <div class="form-group">
                  <label for="cust_email">Email address</label>
-                 <input type="email" class="form-control" id="cust_email" placeholder="Enter email" name="cust_email">
+                 <input type="email" class="form-control" id="cust_email" placeholder="Enter email" name="cust_email" pattern="[a-z0-9._%+-]{2,15}+@[a-z0-9.-]{2,15}+.[a-z]{2,15}">
               </div>
               <div class="form-group">
                   <label for="cust_phone_number">Phone Number</label>
-                  <input type="text" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number" required>
+                  <input type="text" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number"   required autofocus pattern="[0-9]{1,10}">
+                  <span class="help-block small">( enter 10 number only )</span>
               </div>
               <div class="form-group">
                 <label for="contact_person_name">Contact Person</label>
-                <input type="text" class="form-control" id="contact_person_name" placeholder="Contact Person" name="contact_person_name">
+                <input type="text" class="form-control" id="contact_person_name" placeholder="Contact Person" name="contact_person_name" pattern="[A-Z a-z]{1,100}"> 
              </div>
              <div class="form-group">
                 <label for="contact_person_number">Contact Person Number</label>
-                <input type="text" class="form-control" id="contact_person_number" placeholder="Contact Person Number" name="contact_person_number">
+                <input type="text" class="form-control" id="contact_person_number" placeholder="Contact Person Number" name="contact_person_number"  pattern="[0-9]{1,10}">
+                  <span class="help-block small">( enter 10 number only )</span>
              </div>
              <div class="form-group">
                 <label for="street_name">Street Name</label>
@@ -55,14 +57,14 @@
               <div class="col-sm-6" style="padding: 0px;">
                  <div class="form-group">
                      <label for="pincode">Pincode</label>
-                     <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;" required>
+                     <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;"  required autofocus pattern="[0-9]{1,6}">
                  </div>
               </div>
               
                <div class="col-sm-6">
                   <div class="form-group">
                       <label for="country">Country</label>
-                      <input type="text" class="form-control" id="country" placeholder="Country" name="country" style="width: 235px;" required>
+                      <input type="text" class="form-control" id="country" placeholder="Country" name="country" style="width: 235px;"  required>
                   </div>
                </div>
               <div>
