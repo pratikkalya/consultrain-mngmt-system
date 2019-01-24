@@ -70,7 +70,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="overflow-x:hidden;">
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -80,13 +80,6 @@
             <div class="sidebar-header">
                 <a href="/dashboard"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>
 
-                <!-- @guest
-                @if(Route::currentRouteName() == "login")
-                Login
-                @endif
-                @else
-                {{Auth::user()->name}}
-                @endguest -->
                 <strong><img src="{{ asset("img/logo/logosn.html") }}" alt="" /></strong>
             </div>
             <!-- End Logo -->
@@ -148,14 +141,17 @@
                 </ul>
             </nav>
     </div>
+    </nav>
+    </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 50px;min-height: calc(100vh - 62px);">
-                    <!-- <div class="logo-pro">
-                        <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>
-                    </div> -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                style="padding:30px 50px;min-height:calc(100vh-122px);">
+                    <!--<div class="logo-pro">-->
+                    <!--    <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -247,67 +243,68 @@
                                                 <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button"
                                                         aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o"
                                                             aria-hidden="true"></i><span class="indicator-nt"></span></a> -->
-                                                <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                    <div class="notification-single-top">
-                                                        <h1>Notifications</h1>
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                        <div class="notification-single-top">
+                                                            <h1>Notifications</h1>
+                                                        </div>
+                                                        <ul class="notification-menu">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-check adminpro-checked-pro admin-check-pro"
+                                                                            aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Advanda Cro</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-cloud adminpro-cloud-computing-down"
+                                                                            aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-eraser adminpro-shield"
+                                                                            aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-line-chart adminpro-analytics-arrow"
+                                                                            aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="notification-view">
+                                                            <a href="#">View All Notification</a>
+                                                        </div>
                                                     </div>
-                                                    <ul class="notification-menu">
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-check adminpro-checked-pro admin-check-pro"
-                                                                        aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Advanda Cro</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-cloud adminpro-cloud-computing-down"
-                                                                        aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Sulaiman din</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-eraser adminpro-shield" aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Victor Jara</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-line-chart adminpro-analytics-arrow"
-                                                                        aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Victor Jara</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="notification-view">
-                                                        <a href="#">View All Notification</a>
-                                                    </div>
-                                                </div>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
@@ -351,28 +348,17 @@
             <div class="breadcome-area" style="background: #aaaaaa;">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 50px;">
-                            <div class="breadcome-list">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        {{--<div class="breadcome-heading">--}}
-                                            {{--<form role="search" class="">--}}
-                                                {{--<input type="text" placeholder="Search..." class="form-control">--}}
-                                                {{--<a href="#"><i class="fa fa-search"></i></a>--}}
-                                                {{--</form>--}}
-                                            {{--</div>--}}
-                                    </div>
-                                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">--}}
-                                        {{--<ul class="breadcome-menu">--}}
-                                            {{--<li><a href="#">Home</a> <span class="bread-slash">/</span>--}}
-                                                {{--</li>--}}
-                                            {{--<li><span class="bread-blod">Dashboard V.1</span>--}}
-                                                {{--</li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-                                    @yield('content')
-                                </div>
-                            </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 50px;min-height: calc(100vh - 62px);">
+                            <!--<div class="breadcome-list">-->
+                            <!--    <div class="row">-->
+                            <!--        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                                        
+                            <!--        </div>-->
+
+                                    
+                            <!--    </div>-->
+                            <!--</div>-->
+                            @yield('content')
                         </div>
                     </div>
 
@@ -380,8 +366,7 @@
             </div>
         </div>
 
-    </div>
-    <footer>
+
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
@@ -395,7 +380,9 @@
                 </div>
             </div>
         </div>
-    </footer>
+
+    </div>
+
     <!-- jquery
     ============================================ -->
     <script src="{{ asset("js/vendor/jquery-1.11.3.min.js") }}"></script>
