@@ -10,7 +10,6 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CMS | | DASHBOARD</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -122,17 +121,15 @@
 
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
+                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/choices.png')}}"
                                 alt="" style="padding: 6px;"><span class="mini-click-non">AMC Orders</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <!-- <li><a title="ISO Service List" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Show All Projects</span></a></li> -->
-                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/list.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Lists</span></a></li>
 
-                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/list1.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Order Lists</span></a></li>
-
-                            <!-- <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Project Info</span></a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -144,11 +141,7 @@
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                style="padding:30px 50px;min-height:calc(100vh-122px);">
-                    <!--<div class="logo-pro">-->
-                    <!--    <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>-->
-                    <!--</div>-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:30px 50px;min-height:calc(100vh-122px);">
                 </div>
             </div>
         </div>
@@ -169,6 +162,21 @@
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
+<<<<<<< HEAD
+=======
+                                                <li class="nav-item dropdown">
+                                                   
+                                                <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                    
+                                                    <ul class="notification-menu">
+                                                        
+                                                    </ul>
+                                                    <div class="notification-view">
+                                                        <a href="#">View All Notification</a>
+                                                    </div>
+                                                </div>
+                                                </li>
+>>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
                                                         class="nav-link dropdown-toggle">
@@ -178,6 +186,10 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+<<<<<<< HEAD
+=======
+                                                      
+>>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
                                                                     class="fa fa-power-off"></i> Logout</a></li>
@@ -202,6 +214,18 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 50px;min-height: calc(100vh - 62px);">
+<<<<<<< HEAD
+=======
+                            <!--<div class="breadcome-list">-->
+                            <!--    <div class="row">-->
+                            <!--        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+
+                            <!--        </div>-->
+
+
+                            <!--    </div>-->
+                            <!--</div>-->
+>>>>>>> 871382efd822cb2939caf0718fa1c47f604f8f7a
                             @yield('content')
                         </div>
                     </div>
@@ -217,7 +241,7 @@
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
                             <p>Copyright &copy;
-                                <?php echo date("Y") ?> <a href="https://colorlib.com/wp/templates/"></a> All Rights
+                                <?php echo date("Y") ?> <a href=""></a> All Rights
                                 Reserved.</p>
                         </div>
                     </div>
@@ -226,6 +250,15 @@
         </div>
 
     </div>
+    <!-- <script>
+        $(function(){
+        $('#sidebar').hover(function(){
+            $(this).animate({width:'300px'},500);
+        },function(){
+            $(this).animate({width:'220px'},500);
+        }).trigger('mouseleave');
+        });
+    </script> -->
 
     <!-- jquery
     ============================================ -->
@@ -294,8 +327,5 @@
     </script>
     @stack('scripts')
 </body>
-
-
-<!-- Mirrored from colorlib.com/polygon/jeweler/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 09:23:27 GMT -->
 
 </html>
