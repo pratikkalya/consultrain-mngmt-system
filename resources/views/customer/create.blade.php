@@ -16,7 +16,7 @@
               {{csrf_field()}}
               <div class="form-group">
                  <label for="cust_name">Name</label>
-                 <input type="text" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name">
+                 <input type="text" class="form-control" id="cust_name" placeholder="Enter Name" name="cust_name" required>
               </div>
               <div class="form-group">
                  <label for="cust_email">Email address</label>
@@ -24,7 +24,7 @@
               </div>
               <div class="form-group">
                   <label for="cust_phone_number">Phone Number</label>
-                  <input type="text" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number">
+                  <input type="text" class="form-control" id="cust_phone_number" placeholder="Enter Number"  name="cust_phone_number" required>
               </div>
               <div class="form-group">
                 <label for="contact_person_name">Contact Person</label>
@@ -36,33 +36,33 @@
              </div>
              <div class="form-group">
                 <label for="street_name">Street Name</label>
-                <input type="text" class="form-control" id="street_name" placeholder="Street Name" name="street_name">
+                <input type="text" class="form-control" id="street_name" placeholder="Street Name" name="street_name" required>
              </div>
 
               <div class="col-sm-6" style="padding: 0px;">
                  <div class="form-group">
                      <label for="city">City</label>
-                     <input type="text" class="form-control" id="city" placeholder="City" name="city" style="width: 230px;" >
+                     <input type="text" class="form-control" id="city" placeholder="City" name="city" style="width: 230px;" required>
                  </div>
               </div>
               <div class="col-sm-6">
                   <div class="form-group">
                      <label for="state">State</label>
-                     <input type="text" class="form-control" id="state" placeholder="State" name="state" style="width: 235px;">
+                     <input type="text" class="form-control" id="state" placeholder="State" name="state" style="width: 235px;" required>
                   </div>
                </div>
 
               <div class="col-sm-6" style="padding: 0px;">
                  <div class="form-group">
                      <label for="pincode">Pincode</label>
-                     <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;" >
+                     <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" style="width: 230px;" required>
                  </div>
               </div>
               
                <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="country">country</label>
-                      <input type="text" class="form-control" id="country" placeholder="Country" name="country" style="width: 235px;">
+                      <label for="country">Country</label>
+                      <input type="text" class="form-control" id="country" placeholder="Country" name="country" style="width: 235px;" required>
                   </div>
                </div>
               <div>
