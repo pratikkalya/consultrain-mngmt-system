@@ -10,7 +10,6 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CMS | | DASHBOARD</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -125,17 +124,15 @@
 
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
+                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/choices.png')}}"
                                 alt="" style="padding: 6px;"><span class="mini-click-non">AMC Orders</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <!-- <li><a title="ISO Service List" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Show All Projects</span></a></li> -->
-                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/list.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Lists</span></a></li>
 
-                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
+                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/list1.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Show AMC Order Lists</span></a></li>
-
-                            <!-- <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}" alt="" style="padding: 8px;"><span class="mini-click-non">Project Info</span></a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -147,11 +144,7 @@
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                style="padding:30px 50px;min-height:calc(100vh-122px);">
-                    <!--<div class="logo-pro">-->
-                    <!--    <a href="#"><img class="main-logo" src="{{ asset("img/logo/logo.jpg") }}" alt="" /></a>-->
-                    <!--</div>-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:30px 50px;min-height:calc(100vh-122px);">
                 </div>
             </div>
         </div>
@@ -178,133 +171,16 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item dropdown">
-                                                    <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-                                                        class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro"
-                                                            aria-hidden="true"></i><span class="indicator-ms"></span></a> -->
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
-                                                            <h1>Message</h1>
-                                                        </div>
-                                                        <ul class="message-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset("img/contact/1.jpg") }}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset("img/contact/4.jpg") }}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset("img/contact/3.jpg") }}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset("img/contact/2.jpg") }}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="message-view">
-                                                            <a href="#">View All Messages</a>
-                                                        </div>
+                                                   
+                                                <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                    
+                                                    <ul class="notification-menu">
+                                                        
+                                                    </ul>
+                                                    <div class="notification-view">
+                                                        <a href="#">View All Notification</a>
                                                     </div>
-                                                </li>
-                                                <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button"
-                                                        aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o"
-                                                            aria-hidden="true"></i><span class="indicator-nt"></span></a> -->
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-check adminpro-checked-pro admin-check-pro"
-                                                                            aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-cloud adminpro-cloud-computing-down"
-                                                                            aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-eraser adminpro-shield"
-                                                                            aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-line-chart adminpro-analytics-arrow"
-                                                                            aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
+                                                </div>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
@@ -315,16 +191,7 @@
                                                         <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <!-- <li><a href="#"><span class="fa fa-home author-log-ic"></span>Register</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-user author-log-ic"></span>My
-                                                                Profile</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-diamond author-log-ic"></span>
-                                                                Lock</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
-                                                        </li> -->
+                                                      
                                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
                                                                     class="fa fa-power-off"></i> Logout</a></li>
@@ -352,10 +219,10 @@
                             <!--<div class="breadcome-list">-->
                             <!--    <div class="row">-->
                             <!--        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-                                        
+
                             <!--        </div>-->
 
-                                    
+
                             <!--    </div>-->
                             <!--</div>-->
                             @yield('content')
@@ -373,7 +240,7 @@
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
                             <p>Copyright &copy;
-                                <?php echo date("Y") ?> <a href="https://colorlib.com/wp/templates/"></a> All Rights
+                                <?php echo date("Y") ?> <a href=""></a> All Rights
                                 Reserved.</p>
                         </div>
                     </div>
@@ -382,6 +249,15 @@
         </div>
 
     </div>
+    <!-- <script>
+        $(function(){
+        $('#sidebar').hover(function(){
+            $(this).animate({width:'300px'},500);
+        },function(){
+            $(this).animate({width:'220px'},500);
+        }).trigger('mouseleave');
+        });
+    </script> -->
 
     <!-- jquery
     ============================================ -->
@@ -450,8 +326,5 @@
     </script>
     @stack('scripts')
 </body>
-
-
-<!-- Mirrored from colorlib.com/polygon/jeweler/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 09:23:27 GMT -->
 
 </html>
