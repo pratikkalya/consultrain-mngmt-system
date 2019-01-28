@@ -26,6 +26,7 @@ class Payment extends Model
         'final_pay_pl_dt',
         'final_pay_act_dt',
         'final_pay_remark',
+        'payment_status'
     ];
 
     public function projectManagement()

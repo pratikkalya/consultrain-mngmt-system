@@ -30,7 +30,7 @@ class ProjectManagementController extends Controller
     public function index()
     {
         if(Auth::user()->user_type == 'admin'){
-        $projectmanagements = ProjectManagement::latest()->paginate(5);
+        $projectmanagements = ProjectManagement::orderBy('project_status', 'desc')->latest()->paginate(5);
         }
         elseif(Auth::user()->user_type == 'employee'){
         $projectmanagements = ProjectManagement::where('user_id', Auth::user()->id)->latest()->paginate(5);;   
@@ -47,8 +47,8 @@ class ProjectManagementController extends Controller
     public function create()
     {
         $customers = Customer::all();
-        $products =DB::table('products')->select('id','name')->get();
-        $agencies =DB::table('agencies')->select('id','agency_name')->get();
+        $products = Product::all();
+        $agencies = Agency::all();
         $leaders = User::where('user_type', 'employee')->get();
         return view('projectmanagement.create', compact('customers','products','agencies', 'leaders'));
     }
@@ -109,6 +109,7 @@ class ProjectManagementController extends Controller
         $document->formo_planned_date = $data->formo_planned_date;
         $document->formo_actual_date = $data->formo_actual_date ;
         $document->formo_comment = $data->formo_comment;
+        $document->doc_status = $data->doc_status;
         //dd($document);
         $document->save();
     }
@@ -129,7 +130,7 @@ class ProjectManagementController extends Controller
         $implementation->implementation_planned_date = $data->implementation_planned_date;
         $implementation->implementation_actual_date = $data->implementation_actual_date;
         $implementation->implementation_comment = $data->implementation_comment;
-      
+        $implementation->impl_status = $data->impl_status;      
         //dd($implementation);
         $implementation->save();
     }
@@ -153,7 +154,7 @@ class ProjectManagementController extends Controller
         $audit->application_plnd_dt = $data->application_plnd_dt;
         $audit->application_actual_dt = $data->application_actual_dt;
         $audit->application_comment = $data->application_comment;
-      
+        $audit->audit_status = $data->audit_status;            
         //dd($internalaudit);
         $audit->save();
     }
@@ -174,7 +175,7 @@ class ProjectManagementController extends Controller
         $assessment->final_assmt__plnd_date = $data->final_assmt__plnd_date;
         $assessment->final_assmt_actual_date = $data->final_assmt_actual_date;
         $assessment->final_assmt_comment = $data->final_assmt_comment;
-      
+        $assessment->assassment_status = $data->assassment_status;      
         //dd($internalaudit);
         $assessment->save();
     }
@@ -205,7 +206,7 @@ class ProjectManagementController extends Controller
         $payment->final_pay_pl_dt = $data->final_pay_pl_dt;
         $payment->final_pay_act_dt = $data->final_pay_act_dt;
         $payment->final_pay_remark = $data->final_pay_remark;
-      
+        $payment->payment_status = $data->payment_status;      
         //dd($internalaudit);
         $payment->save();
     

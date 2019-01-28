@@ -17,6 +17,7 @@ class Assessment extends Model
         'final_assmt__plnd_date',
         'final_assmt_actual_date',
         'final_assmt_comment',
+        'assassment_status'
     ];
 
     public function projectManagement()

@@ -21,6 +21,7 @@ class Audit extends Model
         'application_plnd_dt',
         'application_actual_dt',
         'application_comment',
+        'audit_status'
     ];
 
     public function projectManagement()

@@ -23,6 +23,7 @@ class Documentation extends Model
         'formo_planned_date',
         'formo_actual_date',
         'formo_comment',
+        'doc_status'
            
     ];
 

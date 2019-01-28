@@ -17,6 +17,7 @@ class Implementation extends Model
         'implementation_planned_date',
         'implementation_actual_date',
         'implementation_comment',
+        'impl_status'
         
     ];
     public function projectManagement()
