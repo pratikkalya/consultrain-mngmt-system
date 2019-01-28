@@ -6,10 +6,11 @@
   <h1>{{$customer->name}}</h1>      
 </div>
 <br>
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <div class="row">
     <div class="col-md-12">
-            <h4 class="c-grey-900 mB-20">Test details</h4>
+    <a class="btn btn-primary"  style="float:right;" href="{{ route('customer.index') }}"> Back</a>
+            <h3 class="c-grey-900 mB-20">Test Details</h3>
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-action">
                         <b>Customer/Comany Name :</b> {{$customer->cust_name}}
@@ -34,12 +35,11 @@
                     </li>
                 </ul>
     </div>
-</div>
-<br><br>
+</div><br>
 <div class="row">
     <div class="col-sm-6">
-    <h4>Service details</h4><br>
-    <table class="table table-bordered">
+    <h3>Service Details</h3><br>
+    <table class="table table-bordered" style="background:white";>
     <thead>
     <tr>
     <th>Service Name</th>
@@ -64,5 +64,5 @@
     </table>
     </div>
 </div>
-
+</div>
 @endsection

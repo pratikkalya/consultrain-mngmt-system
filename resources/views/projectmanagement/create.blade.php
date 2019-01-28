@@ -3,6 +3,7 @@
 @section('content')
 
 @if ($errors->any())
+
 <div class="alert alert-danger">
     <ul>
         @foreach ($errors->all() as $error)
@@ -11,6 +12,7 @@
     </ul>
 </div>
 @endif
+<div class="row" style="padding: 3px 15px;margin:10px">
 <form action="{{route('projectmanagement.store')}}" method="POST">
     {{csrf_field()}}
     <div class="col-sm-12">
@@ -508,7 +510,7 @@
         </div>
     </div>
 </form>
-
+</div>
 @endsection
 
 @push('scripts')

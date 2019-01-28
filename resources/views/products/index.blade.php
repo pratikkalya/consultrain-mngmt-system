@@ -1,16 +1,12 @@
 @extends('layouts.app')
  
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <h2 style="padding: 2px;">ISO List</h2>
-<div class="row">
     
-        <div class="col-lg-12 margin-tb"> 
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New</a>
             </div>
-        </div>
-    </div>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -18,7 +14,7 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="background:white">
         <tr>
             <th>Name</th>
             <!-- <th>Details</th> -->
@@ -48,6 +44,7 @@
         </tr>
         @endforeach
     </table>
+</div>
     {!! $products->links() !!}
     @endsection
 

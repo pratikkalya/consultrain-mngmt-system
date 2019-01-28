@@ -1,7 +1,6 @@
 @extends('layouts.app')
-  
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <form  action="{{route('projectmanagementamc.store',['id'=> $projectmanagement->id])}}" method="POST">
    @if ($errors->any())
      <div class="alert alert-danger">
@@ -124,10 +123,10 @@
       <div class="col-sm-4">
           <button type="submit" class="btn btn-primary">Submit</button>
       
-            <a class="btn btn-primary" href="{{ route('amcs.complete') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('amcs.complete') }}">Back</a>
         </div>
    </div>
 </form>
-
+</div>
 @endsection
 

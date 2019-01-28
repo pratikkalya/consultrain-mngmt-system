@@ -1,7 +1,6 @@
 @extends('layouts.app')
-  
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <form  action="{{route('projectmanagementamc.update',['id'=> $amc->id])}}" method="POST">
    @if ($errors->any())
      <div class="alert alert-danger">
@@ -127,6 +126,6 @@
       </div>
    </div>
 </form>
-
+</div>
 @endsection
 

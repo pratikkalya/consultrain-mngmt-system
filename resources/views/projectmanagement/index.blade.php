@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <h2 style="padding: 2px;">Project Information</h2>
-<div class="row">
-    <div class="col-lg-12 margin-tb">
+
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projectmanagement.create') }}"> Create New</a>
         </div>
-    </div>
-</div>
+
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
     <p>{{ $message }}</p>
@@ -18,10 +16,10 @@
 <br><br>
 @if(Auth::user()->user_type == 'admin')
 <div class="form-group">
-    <input type="text" class="form-control" id="search" name="search" placeholder="Search By Name..">
+    <input type="text" class="form-control" id="search" name="search" placeholder="Search Here..">
 </div>
 @endif
-<table class="table table-bordered" id="table">
+<table class="table table-bordered" id="table" style="background:white"> 
     <thead>
         <tr>
             <th>No</th>
@@ -50,7 +48,7 @@
     </tbody>
 </table>
 
-
+</div>
 
 {!! $projectmanagements->links() !!}
 @endsection

@@ -1,6 +1,7 @@
 @extends('layouts.app')
   
 @section('content')
+<div class="row" style="padding: 3px 15px;margin:10px">
       <div class ="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-right: 320px;">
          <h1>Add Customer</h1>
          <form action="{{route('customer.store')}}" method="post">
@@ -74,6 +75,7 @@
      </div>
     <br>
     <br>
+</div>
     @endsection
 
 
