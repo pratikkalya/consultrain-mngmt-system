@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <h2 style="padding: 2px;">AMC List</h2>
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
@@ -10,9 +10,9 @@
 @endif
 
 <div class="form-group">
-    <input type="text" class="form-control" id="search" name="search" placeholder="Search By Name..">
+    <input type="text" class="form-control" id="search" name="search" placeholder="Search Here..">
 </div>
-<table class="table table-bordered" id="table">
+<table class="table table-bordered" id="table" style="background:white;">
     <thead>
     <tr>
         <th>No</th>
@@ -36,6 +36,7 @@
     @endforeach
     </tbody>
 </table>
+</div>
 {!! $projectmanagements->links() !!}
 @endsection
 
@@ -66,9 +67,9 @@
                     var search_details = new Object();
 
                     search_details.id = value.id;
-                    search_details.order_no = value.order_no.toLowerCase();
-                    search_details.cust_name = value.customer.cust_name.toLowerCase();
-                    search_details.product_name = value.product.name.toLowerCase();
+                    search_details.order_no = value.order_no;
+                    search_details.cust_name = value.customer.cust_name;
+                    search_details.product_name = value.product.name;
                     content.push(search_details);
                 });
                 searchObject = content;

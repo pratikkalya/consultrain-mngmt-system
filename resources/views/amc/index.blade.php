@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="row" style="padding: 3px 15px;margin:10px">
 <h2 style="padding: 2px;">AMC Order List</h2>
 
 @if ($message = Session::get('success'))
@@ -12,7 +13,7 @@
 <!-- <div class="form-group">
     <input type="text" class="form-control" id="search" name="search" placeholder="Search By Name..">
 </div> -->
-<table class="table table-bordered" id="table">
+<table class="table table-bordered" id="table" style="background:white;">
     <thead>
         <tr>
             <th>No</th>
@@ -38,6 +39,7 @@
         @endforeach
         </tbody>
 </table>
+</div>
 {!! $amcs->links() !!}
 @endsection
 

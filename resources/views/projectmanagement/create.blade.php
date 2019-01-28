@@ -3,6 +3,7 @@
 @section('content')
 
 @if ($errors->any())
+
 <div class="alert alert-danger">
     <ul>
         @foreach ($errors->all() as $error)
@@ -11,6 +12,7 @@
     </ul>
 </div>
 @endif
+<div class="row" style="padding: 3px 15px;margin:10px">
 <form action="{{route('projectmanagement.store')}}" method="POST">
     {{csrf_field()}}
     <div class="col-sm-12">
@@ -76,7 +78,7 @@
                                     <!--selected by default-->
                                     @foreach ($leaders as $leader)
                                     <option value="{{ $leader->id }}">{{ $leader->name }}</option>
-                                    @endforeach                                    
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -133,6 +135,15 @@
                             <div class="col-sm-4">
                                 <label for="gap_assessment">Gap Assessment Date:</label>
                                 <input type="date" class="form-control" id="gap_assessment" name="gap_assessment">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Project Status:</label>
+                                <select class="form-control" name="project_status">
+                                    <option value="open">Open</option>
+                                    <option value="close">Close</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -221,6 +232,15 @@
                                 <input type="text" class="form-control" id="formo_comment" name="formo_comment">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Documentation Status:</label>
+                                <select class="form-control" name="doc_status">
+                                    <option value="pending">Pending</option>
+                                    <option value="complete">Complete</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,6 +291,15 @@
                             <div class="col-sm-4">
                                 <label for="implementation_comment">Implementation Comment:</label>
                                 <input type="text" class="form-control" id="implementation_comment" name="implementation_comment">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Implimentation Status:</label>
+                                <select class="form-control" name="impl_status">
+                                    <option value="pending">Pending</option>
+                                    <option value="complete">Complete</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -342,6 +371,15 @@
                                 <input type="text" class="form-control" id="application_comment" name="application_comment">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Audit Status:</label>
+                                <select class="form-control" name="audit_status">
+                                    <option value="pending">Pending</option>
+                                    <option value="complete">Complete</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -392,6 +430,15 @@
                             <div class="col-sm-4">
                                 <label for="final_assmt_comment">Final Assesment Comment:</label>
                                 <input type="text" class="form-control" id="final_assmt_comment" name="final_assmt_comment">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Assessment Status:</label>
+                                <select class="form-control" name="assassment_status">
+                                    <option value="pending">Pending</option>
+                                    <option value="complete">Complete</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -496,7 +543,16 @@
                                 <label for="final_pay_remark">Final Pay Remark:</label>
                                 <input type="text" class="form-control" id="final_pay_remark" name="final_pay_remark">
                             </div>
-                        </div> <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="value">Payment Status:</label>
+                                <select class="form-control" name="payment_status">
+                                    <option value="pending">Pending</option>
+                                    <option value="complete">Complete</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -508,7 +564,7 @@
         </div>
     </div>
 </form>
-
+</div>
 @endsection
 
 @push('scripts')

@@ -26,6 +26,7 @@ class ProjectManagement extends Model
         'start_actual_dt',
         'gap_assessment',
         'amc',
+        'project_status'
     ];
 
     public function documentation() 

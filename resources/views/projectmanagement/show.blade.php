@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" style="padding: 3px 15px;margin:10px">
     <form action="{{ route('projectmanagement.update', ['id'=> $projectmanagement->id]) }}" method="post">
         {{csrf_field()}}
-        <div class="col-sm-12">
-            <div class="row">
-                <input type="hidden" name="_method" value="put">
-                <div class="col-sm-4">
-                    <label class="bmd-label-floating">Customer Name: {{$projectmanagement->customer->cust_name}}</label>
-                    <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
-                </div>
-                <div class="col-sm-4">
-                    <label class="bmd-label-floating">Service Name: {{$projectmanagement->product->name}}</label>
-                    <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
-                </div>
-                <div class="col-sm-4">
-                    <label class="bmd-label-floating">Agency Name: {{$projectmanagement->agency->agency_name}}</label>
-                    <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
-                </div>
+        <div class="row">
+            <input type="hidden" name="_method" value="put">
+            <div class="col-sm-4">
+                <label class="bmd-label-floating" style="font-size:20px;">Customer Name: {{$projectmanagement->customer->cust_name}}</label>
+                <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
+            </div>
+            <div class="col-sm-4">
+                <label class="bmd-label-floating" style="font-size:20px;">Service Name: {{$projectmanagement->product->name}}</label>
+                <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
+            </div>
+            <div class="col-sm-4">
+                <label class="bmd-label-floating" style="font-size:20px;">Agency Name: {{$projectmanagement->agency->agency_name}}</label>
+                <input type="hidden" name="customer_id" value="{{ $projectmanagement->customer->id }}">
             </div>
         </div>
-        <br><br><br>
+        <br>
         <div class="panel-group" id="accordion">
             <!-- accordion 1 -->
             <div class="panel panel-primary">
@@ -40,10 +39,11 @@
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-4">
-                                <label for="project_lead">Project Leader:</label>
-                                <select name="user_id" class="form-control">
-                                    <option value="{{ $projectmanagement->user->id }}">{{ $projectmanagement->user->name }}</option>                                   
-                                </select>
+                                    <label for="project_lead">Project Leader:</label>
+                                    <select name="user_id" class="form-control">
+                                        <option value="{{ $projectmanagement->user->id }}">{{
+                                            $projectmanagement->user->name }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-sm-4">
@@ -51,11 +51,14 @@
                                     <input type="text" class="form-control" id="reference" name="reference" value="{{ $projectmanagement->reference}}">
                                 </div>
                                 <div class="col-sm-4">
-                                <label for="amc">AMC:</label>
+                                    <label for="amc">AMC:</label>
                                     <div class="radio">
-                                    
-                                        <label><input type="radio" name="amc" value="yes" @if($projectmanagement->amc == 'yes') Checked @endif>Yes</label>
-                                        <label><input type="radio" name="amc" value="no" @if($projectmanagement->amc == 'no') Checked @endif>No</label>
+
+                                        <label><input type="radio" name="amc" value="yes" @if($projectmanagement->amc
+                                            ==
+                                            'yes') Checked @endif>Yes</label>
+                                        <label><input type="radio" name="amc" value="no" @if($projectmanagement->amc ==
+                                            'no') Checked @endif>No</label>
                                     </div>
                                 </div>
                             </div>
@@ -80,12 +83,14 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <label for="order_no">Order No:</label>
-                                    <input type="text" class="form-control" id="order_no" name="order_no" value="{{ $projectmanagement->order_no}}" readonly>
+                                    <input type="text" class="form-control" id="order_no" name="order_no" value="{{ $projectmanagement->order_no}}"
+                                        readonly>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <label for="order_date">Order Date:</label>
-                                    <input type="date" class="form-control" id="order_date" name="order_date" value="{{ $projectmanagement->order_date}}" readonly>
+                                    <input type="date" class="form-control" id="order_date" name="order_date" value="{{ $projectmanagement->order_date}}"
+                                        readonly>
                                 </div>
 
                                 <div class="col-sm-4">
@@ -111,6 +116,18 @@
                                     <label for="gap_assessment">Gap Assessment Date:</label>
                                     <input type="date" class="form-control" id="gap_assessment" name="gap_assessment"
                                         value="{{ $projectmanagement->gap_assessment}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Project Status:</label>
+                                    <select class="form-control" name="project_status">
+                                        <option value="open" @if($projectmanagement->project_status == 'open') selected
+                                            @endif>Open</option>
+                                        <option value="close" @if($projectmanagement->project_status == 'close')
+                                            selected
+                                            @endif>Close</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -209,6 +226,17 @@
                                         value="{{ $documentation->formo_comment}}">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Documentation Status:</label>
+                                    <select class="form-control" name="doc_status">
+                                        <option value="pending" @if($projectmanagement->documentation->doc_status ==
+                                            'pending') selected @endif>Pending</option>
+                                        <option value="complete" @if($projectmanagement->documentation->doc_status ==
+                                            'complete') selected @endif>Complete</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -265,6 +293,17 @@
                                     <label for="implementation_comment">Implementation Comment:</label>
                                     <input type="text" class="form-control" id="implementation_comment" name="implementation_comment"
                                         value="{{ $implementation->implementation_comment}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Implimentation Status:</label>
+                                    <select class="form-control" name="impl_status">
+                                        <option value="pending" @if($projectmanagement->implementation->impl_status ==
+                                            'pending') selected @endif>Pending</option>
+                                        <option value="complete" @if($projectmanagement->implementation->impl_status ==
+                                            'complete') selected @endif>Complete</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -345,6 +384,17 @@
                                         value="{{$audit->application_comment}}">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Audit Status:</label>
+                                    <select class="form-control" name="audit_status">
+                                        <option value="pending" @if($projectmanagement->audit->audit_status ==
+                                            'pending') selected @endif>Pending</option>
+                                        <option value="complete" @if($projectmanagement->audit->audit_status ==
+                                            'complete') selected @endif>Complete</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -401,6 +451,19 @@
                                     <label for="final_assmt_comment">Final Assesment Comment:</label>
                                     <input type="text" class="form-control" id="final_assmt_comment" name="final_assmt_comment"
                                         value="{{$assessment->final_assmt_comment}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Assessment Status:</label>
+                                    <select class="form-control" name="assassment_status">
+                                        <option value="pending" @if($projectmanagement->assessment->assassment_status
+                                            ==
+                                            'pending') selected @endif>Pending</option>
+                                        <option value="complete" @if($projectmanagement->assessment->assassment_status
+                                            ==
+                                            'complete') selected @endif>Complete</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -517,18 +580,30 @@
                                     <input type="text" class="form-control" id="final_pay_remark" name="final_pay_remark"
                                         value="{{$payment->final_pay_remark}}">
                                 </div>
-                            </div> <br>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="value">Payment Status:</label>
+                                    <select class="form-control" name="payment_status">
+                                        <option value="pending" @if($projectmanagement->payment->payment_status ==
+                                            'pending') selected @endif>Pending</option>
+                                        <option value="complete" @if($projectmanagement->payment->payment_status ==
+                                            'complete') selected @endif>Complete</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
-        </div>
     </form>
+</div>
 @endsection
 
 @push('scripts')
