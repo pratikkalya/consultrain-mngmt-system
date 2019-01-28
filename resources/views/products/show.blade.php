@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" style="padding: 3px 15px;margin:10px">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Services</h2>
+                <h2>Show Services</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
             </div>
         </div>
     </div>
-   
+   <br><br>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -26,4 +27,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" style="padding: 3px 15px;margin:10px">
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -115,5 +116,6 @@
 
         </div>
     </div>
+</div>
 </div>
 @endsection

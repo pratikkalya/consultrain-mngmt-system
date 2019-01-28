@@ -1,7 +1,7 @@
 @extends('layouts.app')
    
 @section('content')
-
+<div class="row" style="padding: 3px 15px;margin:10px">
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -52,4 +52,5 @@
         </div>
    
     </form>
+</div>
     @endsection

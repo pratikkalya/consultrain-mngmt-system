@@ -1,6 +1,7 @@
 @extends('layouts.app')
   
 @section('content')
+<div class="row" style="padding: 3px 15px;margin:10px">
 
 <div class="pull-right">
     <a class="btn btn-primary" href="{{ route('customer.index') }}"> Back</a>
@@ -76,5 +77,5 @@
           </form>
      </div>
 </div>
-
+</div>
   @endsection

@@ -377,9 +377,9 @@ body {}
 }
 .header-right-info ul.header-right-menu li .author-message-top, .header-right-info ul.header-right-menu li .notification-author, .header-right-info ul.header-right-menu li .author-log{
    position:absolute;
-   top:160%;
+   top:179%;
    left:-70px;
-   width:330px;
+   width:230px;
    background:#343434;
    text-align:left;
    opacity:0;
@@ -389,7 +389,7 @@ body {}
 }
 .header-right-info ul.header-right-menu li .dropdown-header-top.author-log{
    width:200px;
-   padding:10px 0px;
+   padding:0px 50px;
 }
 .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li{
    display:block;
