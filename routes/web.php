@@ -25,6 +25,7 @@ Route::resource('document', 'DocumentationController')->middleware('auth');
 Route::resource('audit', 'AuditController')->middleware('auth');
 Route::resource('assessment', 'AssessmentController')->middleware('auth');
 Route::resource('payment', 'PaymentController')->middleware('auth');
+Route::resource('users', 'UserController')->middleware(['auth', 'admin']);
 
 Route::get('amcs/complete', 'ProjectManagementController@completeAmc')->name('amcs.complete')->middleware(['auth', 'adminemployee']);
 Route::get('projectmanagement/{id}/amc/create', 'ProjectManagementAmcController@create')->name('projectmanagementamc.create')->middleware(['auth', 'admin']);

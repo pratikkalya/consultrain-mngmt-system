@@ -34,19 +34,19 @@
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
                     <li class="">
-                        <a class="has-arrow" href="#">
+                        <a title="Customers" class="has-arrow" href="#">
                             <img src="{{asset('img/sidebar/customer.png')}}" alt="Home" style="padding: 6px;"> <span
                                 class="mini-click-non">Customers</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Customer List" href="{{ route('customer.index') }}"><img src="{{asset('img/sidebar/users.png')}}"
+                            <li><a title="All Customers List" href="{{ route('customer.index') }}"><img src="{{asset('img/sidebar/customer_list.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">All Customers List</span></a></li>
                             <li><a title="Add Customer" href="{{ route('customer.create') }}"><img src="{{asset('img/sidebar/add-user.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Add Customer</span></a></li>
                         </ul>
                     </li>
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home2.png')}}"
+                        <a title="ISO Services" class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home2.png')}}"
                                 alt="" style="padding: 6px;"><span class="mini-click-non">ISO Services</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="ISO Service List" href="{{ route('products.index') }}"><img src="{{asset('img/sidebar/show-all-service.png')}}"
@@ -58,11 +58,11 @@
 
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
+                        <a title="Project Planning" class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/home5.png')}}"
                                 alt="" style="padding: 6px;"><span class="mini-click-non">Project Planning</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
 
-                            <li><a title="Add New Project" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}"
+                            <li><a title="Project Info" href="{{ route('projectmanagement.index') }}"><img src="{{asset('img/sidebar/show-all-audit.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Project Info</span></a></li>
                             <li><a title="Add New Project" href="{{ route('projectmanagement.create') }}"><img src="{{asset('img/sidebar/add-new-service.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">Add New Project</span></a></li>
@@ -71,17 +71,32 @@
                     </li>
 
                     <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/choices.png')}}"
+                        <a title="AMC Orders" class="has-arrow" href="#" aria-expanded="false"><img src="{{asset('img/sidebar/choices.png')}}"
                                 alt="" style="padding: 6px;"><span class="mini-click-non">AMC Orders</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
 
-                            <li><a title="Add New Project" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/list.png')}}"
+                            <li><a title="AMC Lists" href="{{ route('amcs.complete') }}"><img src="{{asset('img/sidebar/list.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">AMC Lists</span></a></li>
 
-                            <li><a title="Add New Project" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/list1.png')}}"
+                            <li><a title="AMC Order Lists" href="{{ route('projectmanagementamc.index') }}"><img src="{{asset('img/sidebar/list1.png')}}"
                                         alt="" style="padding: 8px;"><span class="mini-click-non">AMC Order Lists</span></a></li>
                         </ul>
                     </li>
+                    
+                    @if(Auth::user()->user_type == 'admin')
+                    <li id="removable">
+                        <a title="Users" class="has-arrow" href="#">
+                            <img src="{{asset('img/sidebar/users.png')}}" alt="Home" style="padding: 6px;"> <span
+                                class="mini-click-non">Users</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+                            <li><a title="All User List" href="{{ route('users.index') }}"><img src="{{asset('img/sidebar/user_list.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">All Users List</span></a></li>
+                            <li><a title="Add User" href="{{ route('users.create') }}"><img src="{{asset('img/sidebar/add_user.png')}}"
+                                        alt="" style="padding: 8px;"><span class="mini-click-non">Add User</span></a></li>
+                        </ul>
+                    </li>
+                    @endif
                 </ul>
             </nav>
     </div>
